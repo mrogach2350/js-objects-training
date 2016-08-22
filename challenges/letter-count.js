@@ -29,5 +29,21 @@
     ```
 
 */
+function letterCount(str){
+  var obj = {};
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var letters = str.split('');
+  for (var i = 0; i < letters.length; i ++){
+    if (obj[letters[i].toLowerCase()] === undefined && alphabet.indexOf(letters[i].toLowerCase()) !== -1){
+      obj[letters[i].toLowerCase()] = 1;
+    } else if (obj[letters[i].toLowerCase()] !== undefined && alphabet.indexOf(letters[i].toLowerCase()) !== -1){
+      obj[letters[i].toLowerCase()] ++;
+    }
+  }
+  return obj;
+}
+
+console.log(letterCount('apple jack cerEal Is Super gOod!'));
 
 // YOUR CODE HERE
